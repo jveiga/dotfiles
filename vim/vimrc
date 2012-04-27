@@ -1,0 +1,13 @@
+set nocompatible
+filetype plugin on
+
+syntax enable
+filetype plugin indent on         
+set laststatus=2
+set nu
+map <silent>K :!evince main.pdf &<CR><CR>
+map <silent>H :!pdflatex main.tex <CR><CR>
+set incsearch 
+set hlsearch 
+set scrolloff=5
+set autoindent
