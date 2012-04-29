@@ -10,6 +10,10 @@ set hlsearch
 set scrolloff=5
 set autoindent
 
+"change ; with ,
+" ; repeat search in same direction
+" , repeat search in opposite direction
+
 au BufNewFile,BufRead *.tex : call MyLatex()
 
 function! MyLatex()
