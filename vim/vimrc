@@ -3,8 +3,8 @@
 
 set nocompatible                  " Must come first because it changes other options.
 
-call pathogen#infect()
-call pathogen#helptags()
+"call pathogen#infect()
+"call pathogen#helptags()
 
 filetype plugin on
 
@@ -52,7 +52,7 @@ set laststatus=2                  " Show the status line all the time
 
 " Or use vividchalk
 "colorscheme topfunky-light
-colorscheme 256_jungle
+colorscheme 256-jungle
 
 " Uncomment to use Jamis Buck's file opening plugin
 "map <Leader>t :FuzzyFinderTextMate<Enter>
