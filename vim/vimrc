@@ -88,6 +88,7 @@ noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
+map Y y$
 set autoindent
 
 
