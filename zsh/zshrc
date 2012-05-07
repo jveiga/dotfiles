@@ -22,10 +22,15 @@ alias cp='cp -v'
 alias ssh='ssh -vv'
 alias casa='ssh casa'
 alias tania='ssh tania'
+<<<<<<< HEAD
 alias rsync='rsync --progress -vvat'
+=======
+alias mv='mv -v'
+>>>>>>> dd8b61eace5446ff6270fcfd822036f6f5843e79
 
 export EDITOR='vim'
-export SVN_EDITOR='vim -c "4,\$!cut -c-5 --complement | xargs svn diff --no-diff-deleted -x --ignore-eol-style" -c "set syntax=diff" +0'
+#export EDITOR='gvim -f'
+export SVN_EDITOR='vim -f -c "4,\$!cut -c-5 --complement | xargs svn diff --no-diff-deleted -x --ignore-eol-style" -c "set syntax=diff" +0'
 # Less Colors for Man Pages
 export LESS_TERMCAP_mb=$'\E[01;31m'       # begin blinking
 export LESS_TERMCAP_md=$'\E[01;38;5;74m'  # begin bold
@@ -34,6 +39,6 @@ export LESS_TERMCAP_se=$'\E[0m'           # end standout-mode
 export LESS_TERMCAP_so=$'\E[38;5;246m'    # begin standout-mode - info box
 export LESS_TERMCAP_ue=$'\E[0m'           # end underline
 export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline0
-export TERM=xterm-256color
-[ -z "$TMUX" ] && export TERM=xterm-256color
+#export TERM=xterm-256color
+#[ -z "$TMUX" ] && export TERM=xterm-256color
 
