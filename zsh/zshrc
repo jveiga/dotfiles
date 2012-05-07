@@ -22,6 +22,7 @@ alias cp='cp -v'
 alias ssh='ssh -vv'
 alias casa='ssh casa'
 alias tania='ssh tania'
+alias rsync='rsync --progress -vvat'
 
 export EDITOR='vim'
 export SVN_EDITOR='vim -c "4,\$!cut -c-5 --complement | xargs svn diff --no-diff-deleted -x --ignore-eol-style" -c "set syntax=diff" +0'
