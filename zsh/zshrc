@@ -22,6 +22,7 @@ alias cp='cp -v'
 alias ssh='ssh -vv'
 alias casa='ssh casa'
 alias tania='ssh tania'
+alias sftp='sftp -vv'
 alias mv='mv -v'
 
 export EDITOR='vim'
