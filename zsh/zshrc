@@ -22,7 +22,11 @@ alias cp='cp -v'
 alias ssh='ssh -vv'
 alias casa='ssh casa'
 alias tania='ssh tania'
+<<<<<<< HEAD
 alias rsync='rsync --progress -vvat'
+=======
+alias sftp='sftp -vv'
+>>>>>>> 435c8c452783a5de45acffbb1175803a77b505a3
 alias mv='mv -v'
 
 export EDITOR='gvim'
