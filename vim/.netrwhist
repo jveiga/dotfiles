@@ -1,8 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_cnt =7
 let g:netrw_dirhist_1='/home/jveiga/Documents/trunk/papers/operational_semantics'
 let g:netrw_dirhist_2='/home/jveiga/Documents/trunk/papers'
 let g:netrw_dirhist_3='/home/jveiga/Documents/trunk'
 let g:netrw_dirhist_4='/home/jveiga/Documents/trunk/papers/operational_semantics'
 let g:netrw_dirhist_5='/home/jveiga/dotfiles/vim/ftplugin'
 let g:netrw_dirhist_6='/home/jveiga/.centerim'
+let g:netrw_dirhist_7='/home/jveiga/Documents/trunk/papers/operational_semantics'
