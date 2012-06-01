@@ -66,7 +66,7 @@ startup = do
 main = do
 	xmproc <- spawnPipe "xmobar "
 	xmonad $ defaultConfig
-		{ --manageHook = manageDocks <+> myManageHook -- make sure to include myManageHook definition from above
+		{ manageHook = manageDocks <+> myManageHook -- make sure to include myManageHook definition from above
 		-- <+> manageHook defaultConfig
                  workspaces         = myWorkspaces
 		, terminal = "gnome-terminal"

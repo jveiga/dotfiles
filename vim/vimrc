@@ -16,10 +16,10 @@ filetype plugin indent on " Turn on file type detection.
 
 set backspace=indent,eol,start " Intuitive backspacing.
 
-"set hidden " Handle multiple buffers better.
+set hidden " Handle multiple buffers better.
 
-"set wildmenu " Enhanced command line completion.
-"set wildmode=list:longest " Complete files like a shell.
+set wildmenu " Enhanced command line completion.
+set wildmode=list:longest " Complete files like a shell.
 
 set ignorecase " Case-insensitive searching.
 set smartcase " But case-sensitive if expression contains a capital letter.
@@ -52,7 +52,7 @@ set laststatus=2 " Show the status line all the time
 
 " Or use vividchalk
 "colorscheme topfunky-light
-colorscheme 256-jungle
+colorscheme desertEx
 
 " Uncomment to use Jamis Buck's file opening plugin
 "map <Leader>t :FuzzyFinderTextMate<Enter>
@@ -73,8 +73,8 @@ colorscheme 256-jungle
 "let g:tex_flavor='latex'
 "noremap H :! pdflatex main.tex<CR><CR>
 "noremap K :! evince main.pdf&<CR><CR>
-noremap <silent><F6> :! svn status; sleep 3; svn ci<CR><CR>
-
+noremap <silent> <F6> : <silent> ! svn status; sleep 3; svn ci<CR><CR>
+"map <F6> :new<CR>:read !svn diff<CR>:set syntax=diff buftype=nofile<CR>gg !svn ci
 "au BufRead *.tex, BufNewFile : call MyLatex()
 "function! MyLatex()
 " noremap <silent>H :! pdflatex main.tex<CR><CR>
@@ -88,6 +88,7 @@ noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
+map Y y$
 set autoindent
 
 
