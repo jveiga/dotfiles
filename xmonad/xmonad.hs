@@ -64,12 +64,12 @@ startup = do
 	  spawn "xscreensaver -no-splash&"
 
 main = do
-	xmproc <- spawnPipe "xmobar "
+	xmproc <- spawnPipe "/usr/bin/xmobar ~/.xmobarrc"
 	xmonad $ defaultConfig
 		{ --manageHook = manageDocks <+> myManageHook -- make sure to include myManageHook definition from above
 		-- <+> manageHook defaultConfig
                  workspaces         = myWorkspaces
-		, terminal = "gnome-terminal"
+		, terminal = "urxvt"
 		, focusFollowsMouse  = False
    		, layoutHook=avoidStruts $ layoutHook defaultConfig
 		, logHook = dynamicLogWithPP xmobarPP
