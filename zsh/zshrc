@@ -3,7 +3,7 @@
 zstyle ':completion:*' completer _complete _ignored _approximate
 zstyle :compinstall filename '/home/jveiga/.zshrc'
 
-autoload -Uz compinit
+#autoload -Uz compinit
 compinit
 autoload -Uz promptinit
 promptinit
@@ -26,7 +26,7 @@ alias rsync='rsync --progress -vvat'
 alias sftp='sftp -vv'
 alias mv='mv -v'
 
-export EDITOR='gvim'
+export EDITOR='vim'
 #export EDITOR='gvim -f'
 export SVN_EDITOR='vim -f -c "4,\$!cut -c-5 --complement | xargs svn diff --no-diff-deleted -x --ignore-eol-style" -c "set syntax=diff" +0'
 # Less Colors for Man Pages
