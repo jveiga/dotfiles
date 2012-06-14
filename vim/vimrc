@@ -52,8 +52,7 @@ set laststatus=2 " Show the status line all the time
 
 " Or use vividchalk
 "colorscheme topfunky-light
-colorscheme desertEx
-
+colorscheme solarized
 " Uncomment to use Jamis Buck's file opening plugin
 "map <Leader>t :FuzzyFinderTextMate<Enter>
 

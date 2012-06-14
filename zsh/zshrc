@@ -23,10 +23,11 @@ alias cp='cp -v'
 alias ssh='ssh -vv'
 alias casa='ssh casa'
 alias tania='ssh tania'
+alias rsync='rsync --progress -vvat'
 alias sftp='sftp -vv'
 alias mv='mv -v'
 
-export EDITOR='vim'
+export EDITOR='gvim'
 #export EDITOR='gvim -f'
 export SVN_EDITOR='vim -f -c "4,\$!cut -c-5 --complement | xargs svn diff --no-diff-deleted -x --ignore-eol-style" -c "set syntax=diff" +0'
 # Less Colors for Man Pages
@@ -39,4 +40,4 @@ export LESS_TERMCAP_ue=$'\E[0m'           # end underline
 export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline0
 #export TERM=xterm-256color
 #[ -z "$TMUX" ] && export TERM=xterm-256color
-
+[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
