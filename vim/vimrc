@@ -3,11 +3,13 @@
 
 set nocompatible " Must come first because it changes other options.
 
-"call pathogen#infect()
-"call pathogen#helptags()
+call pathogen#helptags()
+call pathogen#runtime_append_all_bundles()
 
 filetype plugin on
-
+set list
+set listchars=tab:>.,trail:.,extends:#,nbsp:.
+set pastetoggle=<F2>
 syntax enable " Turn on syntax highlighting.
 filetype plugin indent on " Turn on file type detection.
 
@@ -23,6 +25,7 @@ set wildmode=list:longest " Complete files like a shell.
 
 set ignorecase " Case-insensitive searching.
 set smartcase " But case-sensitive if expression contains a capital letter.
+set smarttab
 
 set number " Show line numbers.
 set ruler " Show cursor position.
@@ -38,12 +41,15 @@ set title " Set the terminal's title
 set visualbell " No beeping.
 
 set nobackup " Don't make a backup before overwriting a file.
+set noswapfile
 set nowritebackup " And again.
 set directory=$HOME/.vim/tmp//,. " Keep swap files in one location
 
 " UNCOMMENT TO USE
-"set tabstop=2 " Global tab width.
-"set shiftwidth=2 " And again, related.
+set tabstop=2 " Global tab width.
+set shiftwidth=4 " And again, related.
+set shiftround
+set showmatch
 "set expandtab " Use spaces instead of tabs
 
 set laststatus=2 " Show the status line all the time
@@ -73,7 +79,6 @@ colorscheme xoria256
 "let g:tex_flavor='latex'
 "noremap H :! pdflatex main.tex<CR><CR>
 "noremap K :! evince main.pdf&<CR><CR>
-noremap <silent> <F6> : <silent> ! svn status; sleep 3; svn ci<CR><CR>
 "map <F6> :new<CR>:read !svn diff<CR>:set syntax=diff buftype=nofile<CR>gg !svn ci
 "au BufRead *.tex, BufNewFile : call MyLatex()
 "function! MyLatex()
@@ -90,5 +95,8 @@ noremap <Left> <NOP>
 noremap <Right> <NOP>
 map Y y$
 set autoindent
+set copyindent
 
 set t_Co=256
+
+nmap <silent> ,/ :nohlsearch<CR>
