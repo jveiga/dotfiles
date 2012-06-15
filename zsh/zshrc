@@ -25,7 +25,7 @@ alias tania='ssh tania'
 alias rsync='rsync --progress -vvat'
 alias sftp='sftp -vv'
 alias mv='mv -v'
-alias git commit='git commit -S'
+alias gc='git commit -S'
 
 export EDITOR='vim'
 #export EDITOR='gvim -f'
