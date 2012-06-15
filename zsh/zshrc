@@ -3,7 +3,7 @@
 zstyle ':completion:*' completer _complete _ignored _approximate
 zstyle :compinstall filename '/home/jveiga/.zshrc'
 
-autoload -Uz compinit
+#autoload -Uz compinit
 compinit
 autoload -Uz promptinit
 promptinit
@@ -27,7 +27,7 @@ alias rsync='rsync --progress -vvat'
 alias sftp='sftp -vv'
 alias mv='mv -v'
 
-export EDITOR='gvim'
+export EDITOR='vim'
 #export EDITOR='gvim -f'
 export SVN_EDITOR='vim -f -c "4,\$!cut -c-5 --complement | xargs svn diff --no-diff-deleted -x --ignore-eol-style" -c "set syntax=diff" +0'
 # Less Colors for Man Pages
@@ -38,6 +38,6 @@ export LESS_TERMCAP_se=$'\E[0m'           # end standout-mode
 export LESS_TERMCAP_so=$'\E[38;5;246m'    # begin standout-mode - info box
 export LESS_TERMCAP_ue=$'\E[0m'           # end underline
 export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline0
-#export TERM=xterm-256color
-#[ -z "$TMUX" ] && export TERM=xterm-256color
+[ -n "$TMUX" ] && export TERM=xterm-256color
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
+export TERM=xterm-256color 
