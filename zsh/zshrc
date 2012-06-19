@@ -15,7 +15,7 @@ HISTSIZE=1000
 SAVEHIST=1000
 setopt autocd
 #set -o vi
-#bindkey -e
+bindkey -e
 # End of lines configured by zsh-newuser-install
 alias ls='ls -h --color=auto'
 alias rm='rm -v'
