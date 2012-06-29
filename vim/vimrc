@@ -49,7 +49,7 @@ set nobackup " Don't make a backup before overwriting a file.
 set noswapfile
 set nowritebackup " And again.
 set directory=$HOME/.vim/tmp//,. " Keep swap files in one location
-
+nnoremap ; :
 " UNCOMMENT TO USE
 set tabstop=2 " Global tab width.
 set shiftwidth=4 " And again, related.
@@ -66,7 +66,7 @@ set laststatus=2 " Show the status line all the time
 
 " Uncomment to use Jamis Buck's file opening plugin
 "map <Leader>t :FuzzyFinderTextMate<Enter>
-
+nnoremap , :
 " Controversial...swap colon and semicolon for easier commands
 "nnoremap ; :
 "nnoremap : ;
