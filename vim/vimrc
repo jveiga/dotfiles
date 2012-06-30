@@ -48,6 +48,8 @@ Bundle 'kien/tabman.vim'
 Bundle 'Lokaltog/vim-powerline'
 " Terminal Vim with 256 colors colorscheme
 Bundle 'fisadev/fisa-vim-colorscheme'
+" CVS and SVN wrapper
+Bundle 'vcscommand.vim'
 
 " Bundles from vim-scripts repos
 
@@ -265,3 +267,4 @@ map Y y$
 
 nnoremap , :
 nmap <silent> ,/ :nohlsearch<CR>
+let tlist_tex_settings = 'latex;l:labels;s:sections;t:subsections;u:subsubsections'
