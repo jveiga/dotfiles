@@ -50,7 +50,8 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'fisadev/fisa-vim-colorscheme'
 " CVS and SVN wrapper
 Bundle 'vcscommand.vim'
-
+" OmniCache
+Bundle 'Shougo/neocomplcache'
 " Bundles from vim-scripts repos
 
 " Consoles as buffers
