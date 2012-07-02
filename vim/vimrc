@@ -39,7 +39,7 @@ Bundle 'kien/ctrlp.vim'
 " PEP8 and python-flakes checker
 Bundle 'nvie/vim-flake8'
 " Zen coding
-Bundle 'mattn/zencoding-vim'
+"Bundle 'mattn/zencoding-vim'
 " Git integration
 Bundle 'motemen/git-vim'
 " Tab list panel
@@ -70,6 +70,8 @@ Bundle 'matchit.zip'
 Bundle 'Wombat'
 "Vcscommand
 Bundle 'vcscommand.vim'
+
+Bundle 'jelera/vim-gummybears-colorscheme'
 
 " Installing plugins the first time
 if iCanHazVundle == 0
@@ -234,7 +236,7 @@ endif
 
 if has('gui_running')
     set guifont=DejaVu\ Sans\ Mono\ 11
-    colorscheme wombat
+    colorscheme gummybears
 else
     set guifont=Droid\ Sans\ Mono\ 10
 endif
