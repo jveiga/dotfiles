@@ -266,6 +266,4 @@ noremap <Right> <NOP>
 "map Y to copy until end of line
 map Y y$
 
-nnoremap , :
-nmap <silent> ,/ :nohlsearch<CR>
 let tlist_tex_settings = 'latex;l:labels;s:sections;t:subsections;u:subsubsections'
