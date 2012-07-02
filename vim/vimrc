@@ -39,7 +39,7 @@ Bundle 'kien/ctrlp.vim'
 " PEP8 and python-flakes checker
 Bundle 'nvie/vim-flake8'
 " Zen coding
-Bundle 'mattn/zencoding-vim'
+"Bundle 'mattn/zencoding-vim'
 " Git integration
 Bundle 'motemen/git-vim'
 " Tab list panel
@@ -68,6 +68,10 @@ Bundle 'IndexedSearch'
 Bundle 'matchit.zip'
 " Gvim colorscheme
 Bundle 'Wombat'
+"Vcscommand
+Bundle 'vcscommand.vim'
+
+Bundle 'jelera/vim-gummybears-colorscheme'
 
 " Installing plugins the first time
 if iCanHazVundle == 0
@@ -232,7 +236,7 @@ endif
 
 if has('gui_running')
     set guifont=DejaVu\ Sans\ Mono\ 11
-    colorscheme wombat
+    colorscheme gummybears
 else
     set guifont=Droid\ Sans\ Mono\ 10
 endif
@@ -266,4 +270,7 @@ noremap <Right> <NOP>
 "map Y to copy until end of line
 map Y y$
 
+<<<<<<< HEAD
 let tlist_tex_settings = 'latex;l:labels;s:sections;t:subsections;u:subsubsections'
+=======
+>>>>>>> af9ab5d86de9dd21f322caf4f7fb2d1a68fc5b6a

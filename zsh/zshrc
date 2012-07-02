@@ -8,6 +8,7 @@ compinit
 autoload -Uz promptinit
 promptinit
 prompt adam2
+export PROMPT_COMMAND="$PROMPT_COMMAND; history -a"
 # End of lines added by compinstall
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
@@ -30,7 +31,7 @@ alias gc='git commit -S'
 
 export EDITOR='vim'
 #export EDITOR='gvim -f'
-export SVN_EDITOR='vim -f -c "4,\$!cut -c-5 --complement | xargs svn diff --no-diff-deleted -x --ignore-eol-style" -c "set syntax=diff" +0'
+export SVN_EDITOR='vim --nofork -f -c "4,\$!cut -c-5 --complement | xargs svn diff --no-diff-deleted -x --ignore-eol-style" -c "set syntax=diff" +0'
 # Less Colors for Man Pages
 export LESS_TERMCAP_mb=$'\E[01;31m'       # begin blinking
 export LESS_TERMCAP_md=$'\E[01;38;5;74m'  # begin bold
