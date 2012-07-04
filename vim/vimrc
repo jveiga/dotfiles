@@ -270,7 +270,3 @@ noremap <Right> <NOP>
 "map Y to copy until end of line
 map Y y$
 
-<<<<<<< HEAD
-let tlist_tex_settings = 'latex;l:labels;s:sections;t:subsections;u:subsubsections'
-=======
->>>>>>> af9ab5d86de9dd21f322caf4f7fb2d1a68fc5b6a
