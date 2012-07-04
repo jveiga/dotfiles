@@ -7,7 +7,7 @@ zstyle :compinstall filename '/home/jveiga/.zshrc'
 compinit
 autoload -Uz promptinit
 promptinit
-prompt adam2
+prompt suse
 export PROMPT_COMMAND="$PROMPT_COMMAND; history -a"
 # End of lines added by compinstall
 # Lines configured by zsh-newuser-install

@@ -269,4 +269,6 @@ noremap <Right> <NOP>
 
 "map Y to copy until end of line
 map Y y$
-
+let tlist_tex_settings   = 'latex;s:sections;g:graphics;l:labels'
+let tlist_make_settings  = 'make;m:makros;t:targets'
+let tlist_tex_settings='latex;b:bibitem;c:command;l:label'
