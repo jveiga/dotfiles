@@ -38,8 +38,6 @@ Bundle 'majutsushi/tagbar'
 Bundle 'kien/ctrlp.vim'
 " PEP8 and python-flakes checker
 Bundle 'nvie/vim-flake8'
-" Zen coding
-"Bundle 'mattn/zencoding-vim'
 " Git integration
 Bundle 'motemen/git-vim'
 " Tab list panel
@@ -54,8 +52,6 @@ Bundle 'vcscommand.vim'
 Bundle 'Shougo/neocomplcache'
 " Bundles from vim-scripts repos
 
-" Consoles as buffers
-Bundle 'Conque-Shell'
 " Autocompletition
 Bundle 'AutoComplPop'
 " Pending tasks list
