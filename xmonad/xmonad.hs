@@ -60,15 +60,16 @@ myWorkspaces = ["1:Web", "2:Dev", "3:Chat", "4:Latex", "5:Remote", "6:Term"]
 startup :: X ()
 startup = do
           spawn "xmodmap ~/.xmodmaprc"
-	  spawn "nitrogen --restore"
-	  spawn "xscreensaver -no-splash&"
+          spawn "nitrogen --restore"
+          spawn "xscreensaver -no-splash&"
 
 main = do
 	xmproc <- spawnPipe "/usr/bin/xmobar ~/.xmobarrc"
 	xmonad $ defaultConfig
 		{ --manageHook = manageDocks <+> myManageHook -- make sure to include myManageHook definition from above
 		-- <+> manageHook defaultConfig
-                 workspaces         = myWorkspaces
+          workspaces         = myWorkspaces
+        , manageHook = myManageHook
 		, terminal = "urxvt"
 		, focusFollowsMouse  = False
    		, layoutHook=avoidStruts $ layoutHook defaultConfig
@@ -79,9 +80,7 @@ main = do
 		,startupHook = startup
 		, modMask = mod4Mask     -- Rebind Mod to the Windows key
 		} `additionalKeys`
-		[ ((mod4Mask .|. shiftMask, xK_z), spawn "xscreensaver-command -lock") --Mod - shift+z
+		[ ((mod4Mask .|. shiftMask, xK_z), spawn "xscreensaver-command -lock") 
 		, ((mod4Mask,             xK_Down), spawn "amixer set Master 1-")
 		, ((mod4Mask,             xK_Up  ), spawn "amixer set Master 1+")
-		--, ((controlMask, xK_Print), spawn "sleep 0.2; scrot -s")
-		--, ((0, xK_Print), spawn "scrot")
 		]

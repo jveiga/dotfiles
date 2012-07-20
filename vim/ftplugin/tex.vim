@@ -1,1 +1,1 @@
-nmap ,h : !pdflatex % <CR><CR>
+map ,h : !pdflatex main.tex <CR> <CR>
