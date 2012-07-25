@@ -242,7 +242,7 @@ set scrolloff=5
 
 " autocompletition of files and commands behaves like shell
 " (complete only the common part, list the options that match)
-set wildmode=list:longest
+set wildmode=longest,list:longest
 
 let g:indexed_search_colors=1
 
