@@ -50,6 +50,7 @@ Bundle 'fisadev/fisa-vim-colorscheme'
 Bundle 'vcscommand.vim'
 " OmniCache
 Bundle 'Shougo/neocomplcache'
+
 " Bundles from vim-scripts repos
 
 " Autocompletition
@@ -66,6 +67,8 @@ Bundle 'matchit.zip'
 Bundle 'Wombat'
 "Vcscommand
 Bundle 'vcscommand.vim'
+"Vimwiki
+Bundle 'vimwiki'
 
 Bundle 'jelera/vim-gummybears-colorscheme'
 
