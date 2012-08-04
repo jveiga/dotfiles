@@ -1,5 +1,5 @@
 !URxvt color scheme:
-
+URxvt*termName: rxvt-unicode
 URxvt*background: #2B2B2B
 URxvt*foreground: #DEDEDE
 

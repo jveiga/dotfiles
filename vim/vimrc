@@ -69,8 +69,16 @@ Bundle 'Wombat'
 Bundle 'vcscommand.vim'
 "Vimwiki
 Bundle 'vimwiki'
-
+"Vim-IPython
+Bundle 'ivanov/vim-ipython'
+"Colorscheme
 Bundle 'jelera/vim-gummybears-colorscheme'
+"Solarized
+Bundle 'altercation/vim-colors-solarized'
+"Muon term
+Bundle 'gregsexton/Muon'
+"Superman Gvim
+Bundle 'tristen/superman'
 
 " Installing plugins the first time
 if iCanHazVundle == 0
@@ -235,8 +243,9 @@ endif
 
 if has('gui_running')
     set guifont=Inconsolata\ Medium\ 12
-    colorscheme gummybears
+    colorscheme superman
 else
+    colorscheme muon
     set guifont=Droid\ Sans\ Mono\ 10
 endif
 
