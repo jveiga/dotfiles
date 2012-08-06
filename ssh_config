@@ -1,9 +1,0 @@
-Host casa
-  HostName styluss.no-ip.org
-  Port 2284
-  User jveiga
-
-Host tania
-  Hostname aleesha.no-ip.org
-  Port 3589
-  User styluss
