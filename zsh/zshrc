@@ -28,6 +28,13 @@ alias rsync='rsync --progress -vvat'
 alias sftp='sftp -vv'
 alias mv='mv -v'
 alias gc='git commit -S'
+alias grep='grep --color=auto'
+alias v='vim'
+alias p='python'
+alias s='sudo'
+alias sa='sudo apt-get'
+alias l='ls'
+alias m='mocp'
 
 export EDITOR='vim'
 #export EDITOR='gvim -f'
@@ -42,7 +49,7 @@ export LESS_TERMCAP_ue=$'\E[0m'           # end underline
 export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline0
 [ -n "$TMUX" ] && export TERM=xterm-256color
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
-export TERM=xterm-256color 
+export TERM=rxvt-unicode
 
 source /home/jveiga/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 

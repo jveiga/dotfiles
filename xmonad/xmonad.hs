@@ -49,6 +49,7 @@ myManageHook = composeAll
 	[ className =? "Gimp" --> doFloat
 	, className =? "Firefox-bin" --> doShift "1:Web"
 	, className =? "File Operation Progress"   --> doFloat
+	, className =? "Nitrogen"   --> doFloat
 	, className =? "Skype" --> viewShift "3:Chat"
 	, className =? "Pidgin" --> viewShift "3:Chat"
 	, className =? "Nitrogen" --> doFloat
@@ -63,6 +64,8 @@ startup = do
           spawn "xmodmap ~/.xmodmaprc"
           spawn "nitrogen --restore"
           spawn "xscreensaver -no-splash&"
+          spawn "conky&"
+          spawn "xscreensaver&"
 
 main = do
 	xmproc <- spawnPipe "/usr/bin/xmobar ~/.xmobarrc"
@@ -82,6 +85,6 @@ main = do
 		, modMask = mod4Mask     -- Rebind Mod to the Windows key
 		} `additionalKeys`
 		[ ((mod4Mask .|. shiftMask, xK_z), spawn "xscreensaver-command -lock") 
-		, ((mod4Mask,             xK_Down), spawn "amixer set Master 1-")
-		, ((mod4Mask,             xK_Up  ), spawn "amixer set Master 1+")
+		, ((mod4Mask,             xK_Down), spawn "amixer set PCM 1-")
+		, ((mod4Mask,             xK_Up  ), spawn "amixer set PCM 1+")
 		]
