@@ -52,6 +52,7 @@ myManageHook = composeAll
 	, className =? "Nitrogen"   --> doFloat
 	, className =? "Skype" --> viewShift "3:Chat"
 	, className =? "Pidgin" --> viewShift "3:Chat"
+	, className =? "Nitrogen" --> doFloat
 	]
     where viewShift = doF . liftM2 (.) W.greedyView W.shift
 
