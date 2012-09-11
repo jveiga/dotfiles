@@ -53,3 +53,4 @@ export TERM=rxvt-unicode
 
 source /home/jveiga/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+export PATH=$PATH:/usr/local/go/bin

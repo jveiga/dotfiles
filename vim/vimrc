@@ -50,6 +50,14 @@ Bundle 'fisadev/fisa-vim-colorscheme'
 Bundle 'vcscommand.vim'
 " OmniCache
 Bundle 'Shougo/neocomplcache'
+" Zencoding abbreviations
+Bundle 'mattn/zencoding-vim'
+" Surround
+Bundle 'tpop/vim-surround.git'
+" Zenburn
+Bundle 'vexxor/zenburn.vim'
+" Surround
+Bundle 'tpope/vim-surround'
 
 " Bundles from vim-scripts repos
 
@@ -69,8 +77,6 @@ Bundle 'Wombat'
 Bundle 'vcscommand.vim'
 "Vimwiki
 Bundle 'vimwiki'
-"Vim-IPython
-Bundle 'ivanov/vim-ipython'
 "Colorscheme
 Bundle 'jelera/vim-gummybears-colorscheme'
 "Solarized
@@ -244,8 +250,9 @@ endif
 if has('gui_running')
     set guifont=Inconsolata\ Medium\ 12
     colorscheme superman
+    set guioptions=aegiLt
 else
-    colorscheme muon
+    colorscheme wombat
     set guifont=Droid\ Sans\ Mono\ 10
 endif
 
@@ -289,3 +296,22 @@ hi MBEVisibleChanged guifg=#F1266F guibg=fg
 hi MBEVisibleNormal guifg=#5DC2D6 guibg=fg
 hi MBEChanged guifg=#CD5907 guibg=fg
 hi MBENormal guifg=#808080 guibg=fg
+
+function! DistractionFreeWriting()
+    colorscheme iawriter
+    set background=light
+    "set gfn=Cousine:h14 " font to use
+    "set lines=40 columns=100 " size of the editable area
+    "set fuoptions=background:#00f5f6f6 " macvim specific setting for editor's background color·
+    set guioptions-=r " remove right scrollbar
+    set laststatus=0 " don't show status line
+    set noruler " don't show ruler
+    "set fullscreen " go to fullscreen editing mode
+    set linebreak " break the lines on words
+    set nocursorline " don't show cursorline
+    set number " show numbers to get some left space
+    set numberwidth=10 " increase space in the left side
+    highlight LineNr term=bold cterm=NONE ctermfg=white ctermbg=NONE gui=NONE guifg=NONE guibg=NONE " Hide numbers
+
+endfunction
+nnoremap <F1> :call DistractionFreeWriting()<cr>

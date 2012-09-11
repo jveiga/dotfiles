@@ -1,5 +1,5 @@
 !URxvt color scheme:
-URxvt*termName: rxvt-unicode
+URxvt*termName: URxvt
 URxvt*background: #2B2B2B
 URxvt*foreground: #DEDEDE
 
@@ -31,6 +31,7 @@ URxvt*color7: #BBBBBB
 URxvt*color15: #EEEEEE
 
 URxvt.scrollBar: off
-URxvt.font: xft:DejaVu Sans Mono:size=10
+!URxvt.font: xft:DejaVu Sans Mono:size=10
+URxvt*font: xft:Bitstream Vera Sans Mono:pixelsize=12:antialias=true:hinting=true
 URxvt*keysym.Home: \033[1~
 URxvt*keysym.End: \033[4~
