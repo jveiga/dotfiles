@@ -40,8 +40,6 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'nvie/vim-flake8'
 " Git integration
 Bundle 'motemen/git-vim'
-" Tab list panel
-Bundle 'kien/tabman.vim'
 " Powerline
 Bundle 'Lokaltog/vim-powerline'
 " Terminal Vim with 256 colors colorscheme
@@ -51,11 +49,13 @@ Bundle 'Shougo/neocomplcache'
 " Zencoding abbreviations
 Bundle 'mattn/zencoding-vim'
 " Surround
-Bundle 'tpop/vim-surround.git'
+Bundle 'tpope/vim-surround.git'
 " Zenburn
 Bundle 'vexxor/zenburn.vim'
 " Surround
 Bundle 'tpope/vim-surround'
+" Ultisnips
+Bundle 'guns/ultisnips'
 
 " Bundles from vim-scripts repos
 
@@ -83,6 +83,8 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'gregsexton/Muon'
 "Superman Gvim
 Bundle 'tristen/superman'
+" Jellybeans
+Bundle 'nanotech/jellybeans.vim'
 
 " Installing plugins the first time
 if iCanHazVundle == 0
@@ -103,9 +105,8 @@ filetype indent on
 
 " tablength exceptions
 autocmd FileType html setlocal shiftwidth=2 tabstop=2
-autocmd FileType htmldjango setlocal shiftwidth=2 tabstop=2
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
-
+    
 " always show status bar
 set ls=2
 
@@ -231,18 +232,15 @@ inoremap <expr> ]  strpart(getline('.'), col('.')-1, 1) == "]" ? "\<Right>" : "]
 inoremap        {  {}<Left>
 inoremap <expr> }  strpart(getline('.'), col('.')-1, 1) == "}" ? "\<Right>" : "}"
 
-" tabman shortcuts
-let g:tabman_toggle = 'tl'
-let g:tabman_focus  = 'tf'
+" Ultisnips Directory
+let g:UltiSnipsSnippetDirectories=["bundle/ultisnips/UltiSnips"]
+let g:UltiSnipsEditSplit="horizontal"
 
 " use 256 colors when possible
 if &term =~? 'mlterm\|xterm\|screen-256'
 	let &t_Co = 256
     " color
     colorscheme fisa
-else
-    " color
-    colorscheme delek
 endif
 
 if has('gui_running')
@@ -250,7 +248,7 @@ if has('gui_running')
     colorscheme superman
     set guioptions=aegiLt
 else
-    colorscheme wombat
+    colorscheme jellybeans
     set guifont=Droid\ Sans\ Mono\ 10
 endif
 
