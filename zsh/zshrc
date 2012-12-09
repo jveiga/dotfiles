@@ -52,6 +52,7 @@ export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline0
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 export TERM=rxvt-unicode
 
-source /home/jveiga/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 export PATH=$PATH:/usr/local/go/bin
+
+PLUGINS( github )

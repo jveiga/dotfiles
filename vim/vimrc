@@ -24,20 +24,14 @@ Bundle 'gmarik/vundle'
 
 " Bundles from GitHub repos:
 
-" Python and PHP Debugger
-Bundle 'jabapyth/vim-debug'
 " Better file browser
 Bundle 'scrooloose/nerdtree'
 " Code commenter
 Bundle 'scrooloose/nerdcommenter'
-" Search and read python documentation
-Bundle 'fs111/pydoc.vim'
 " Class/module browser
 Bundle 'majutsushi/tagbar'
 " Code and files fuzzy finder
 Bundle 'kien/ctrlp.vim'
-" PEP8 and python-flakes checker
-Bundle 'nvie/vim-flake8'
 " Git integration
 Bundle 'motemen/git-vim'
 " Powerline
@@ -56,6 +50,8 @@ Bundle 'vexxor/zenburn.vim'
 Bundle 'tpope/vim-surround'
 " Ultisnips
 Bundle 'guns/ultisnips'
+" Vimux
+Bundle 'vimux'
 
 " Bundles from vim-scripts repos
 
@@ -63,16 +59,12 @@ Bundle 'guns/ultisnips'
 Bundle 'AutoComplPop'
 " Pending tasks list
 Bundle 'TaskList.vim'
-" Python code checker
-Bundle 'pyflakes.vim'
 " Search results counter
 Bundle 'IndexedSearch'
 " XML/HTML tags navigation
 Bundle 'matchit.zip'
 " Gvim colorscheme
 Bundle 'Wombat'
-"Vcscommand
-Bundle 'vcscommand.vim'
 "Vimwiki
 Bundle 'vimwiki'
 "Colorscheme
@@ -85,6 +77,20 @@ Bundle 'gregsexton/Muon'
 Bundle 'tristen/superman'
 " Jellybeans
 Bundle 'nanotech/jellybeans.vim'
+" Css colors
+Bundle 'css_color.vim'
+" Ir_black theme
+Bundle 'wgibbs/ir_black.vim'
+" Railscasts theme
+Bundle 'Railscasts-Theme-GUIand256color'
+" Rails.Vim
+Bundle 'rails.vim'
+" Sexy railscasts
+Bundle 'sexy-railscasts'
+" Hybrid theme
+Bundle 'w0ng/vim-hybrid'
+
+
 
 " Installing plugins the first time
 if iCanHazVundle == 0
