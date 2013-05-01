@@ -33,7 +33,7 @@ Bundle 'majutsushi/tagbar'
 " Code and files fuzzy finder
 Bundle 'kien/ctrlp.vim'
 " Git integration
-Bundle 'motemen/git-vim'
+Bundle 'motemen/tpope/vim-fugitive'
 " Powerline
 Bundle 'Lokaltog/vim-powerline'
 " Terminal Vim with 256 colors colorscheme
@@ -90,6 +90,8 @@ Bundle 'sexy-railscasts'
 " Hybrid theme
 Bundle 'w0ng/vim-hybrid'
 
+" Start screen
+Bundle 'mhinz/vim-startify'
 
 
 " Installing plugins the first time
@@ -121,6 +123,7 @@ set incsearch "Highlight as you type
 set hidden    "Handle multiple buffers better
 set ignorecase " Case-insensitive searching.
 set smartcase " But case-sensitive if expression contains a capital letter.
+set noswapfile
 
 " highlighted search results
 set hlsearch
@@ -252,7 +255,7 @@ endif
 if has('gui_running')
     set guifont=Inconsolata\ Medium\ 12
     colorscheme superman
-    set guioptions=aegiLt
+    set guioptions=aei
 else
     colorscheme jellybeans
     set guifont=Droid\ Sans\ Mono\ 10
@@ -275,14 +278,14 @@ let g:Powerline_symbols = 'unicode'
 set backspace=indent,eol,start 
 
 "nop to arrows
-inoremap <Up> <NOP>
-inoremap <Down> <NOP>
-inoremap <Left> <NOP>
-inoremap <Right> <NOP>
-noremap <Up> <NOP>
-noremap <Down> <NOP>
-noremap <Left> <NOP>
-noremap <Right> <NOP>
+"inoremap <Up> <NOP>
+"inoremap <Down> <NOP>
+"inoremap <Left> <NOP>
+"inoremap <Right> <NOP>
+"noremap <Up> <NOP>
+"noremap <Down> <NOP>
+"noremap <Left> <NOP>
+"noremap <Right> <NOP>
 
 "map Y to copy until end of line
 map Y y$
@@ -299,21 +302,6 @@ hi MBEVisibleNormal guifg=#5DC2D6 guibg=fg
 hi MBEChanged guifg=#CD5907 guibg=fg
 hi MBENormal guifg=#808080 guibg=fg
 
-function! DistractionFreeWriting()
-    colorscheme iawriter
-    set background=light
-    "set gfn=Cousine:h14 " font to use
-    "set lines=40 columns=100 " size of the editable area
-    "set fuoptions=background:#00f5f6f6 " macvim specific setting for editor's background color·
-    set guioptions-=r " remove right scrollbar
-    set laststatus=0 " don't show status line
-    set noruler " don't show ruler
-    "set fullscreen " go to fullscreen editing mode
-    set linebreak " break the lines on words
-    set nocursorline " don't show cursorline
-    set number " show numbers to get some left space
-    set numberwidth=10 " increase space in the left side
-    highlight LineNr term=bold cterm=NONE ctermfg=white ctermbg=NONE gui=NONE guifg=NONE guibg=NONE " Hide numbers
 
-endfunction
-nnoremap <F1> :call DistractionFreeWriting()<cr>
+"highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+"match OverLength /\%81v.\+/
