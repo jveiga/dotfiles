@@ -48,10 +48,6 @@ Bundle 'tpope/vim-surround.git'
 Bundle 'vexxor/zenburn.vim'
 " Surround
 Bundle 'tpope/vim-surround'
-" Ultisnips
-Bundle 'guns/ultisnips'
-" Vimux
-Bundle 'vimux'
 
 " Bundles from vim-scripts repos
 
@@ -83,16 +79,10 @@ Bundle 'css_color.vim'
 Bundle 'wgibbs/ir_black.vim'
 " Railscasts theme
 Bundle 'Railscasts-Theme-GUIand256color'
-" Rails.Vim
-Bundle 'rails.vim'
 " Sexy railscasts
 Bundle 'sexy-railscasts'
 " Hybrid theme
 Bundle 'w0ng/vim-hybrid'
-
-" Start screen
-Bundle 'mhinz/vim-startify'
-
 
 " Installing plugins the first time
 if iCanHazVundle == 0
