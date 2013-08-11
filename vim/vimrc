@@ -75,8 +75,6 @@ Bundle 'tristen/superman'
 Bundle 'nanotech/jellybeans.vim'
 " Css colors
 Bundle 'css_color.vim'
-" Ir_black theme
-Bundle 'wgibbs/ir_black.vim'
 " Railscasts theme
 Bundle 'Railscasts-Theme-GUIand256color'
 " Sexy railscasts
