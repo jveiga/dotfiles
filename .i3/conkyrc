@@ -1,0 +1,24 @@
+out_to_x no
+own_window no
+own_window_type override
+out_to_console yes
+background no
+total_run_times 0
+use_spacer none
+update_interval 2
+
+override_utf8_locale no
+
+TEXT
+# Free space on /home
+/home ${fs_free /home} | \
+# Ethernet status
+wlan0 ${if_up wlan0}${addr wlan0} ${wireless_essid wlan0} ${wireless_bitrate wlan0} ${endif} | \
+# Wireless status
+# wlan0 ${if_up wlan0}${addr wlan0}${endif}
+# CPU stats
+CPU ${cpu cpu1}% ${exec sensors | grep "Core 0"|awk '{print $3}'} ${cpu cpu2}% ${exec sensors | grep "Core 1"|awk '{print $3}'} | \
+# RAM in use
+RAM ${memperc}% | \
+Remaining: ${execi 60 acpi -b | awk '{print$5}'} ${alignr} (${execi 60 acpi -b | awk '{print $4}' | cut -b -3}) | \
+${time %a %d.%m.%y} ${time %H:%M} 
