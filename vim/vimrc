@@ -1,3 +1,12 @@
+" Rambo options
+set path=**
+set suffixesadd=.rb
+set wildmenu
+" set wildignore=
+
+" put this line first in ~/.vimrc
+set nocompatible | filetype indent plugin on | syn on
+
 " no vi-compatible
 set nocompatible
 
@@ -21,66 +30,15 @@ call vundle#rc()
 " let Vundle manage Vundle
 " required!
 Bundle 'gmarik/vundle'
+Bundle 'Tabular'
+Bundle 'rking/ag.vim'
 
-" Bundles from GitHub repos:
+" NERDTree
+Bundle 'NERDTree'
+" Fix weird chars
+let NERDTreeDirArrows=0
 
-" Better file browser
-Bundle 'scrooloose/nerdtree'
-" Code commenter
-Bundle 'scrooloose/nerdcommenter'
-" Class/module browser
-Bundle 'majutsushi/tagbar'
-" Code and files fuzzy finder
-Bundle 'kien/ctrlp.vim'
-" Git integration
-Bundle 'tpope/vim-fugitive'
-" Powerline
-Bundle 'Lokaltog/vim-powerline'
-" Terminal Vim with 256 colors colorscheme
-Bundle 'fisadev/fisa-vim-colorscheme'
-" OmniCache
-Bundle 'Shougo/neocomplcache'
-" Zencoding abbreviations
-Bundle 'mattn/zencoding-vim'
-" Surround
-Bundle 'tpope/vim-surround.git'
-" Zenburn
-Bundle 'vexxor/zenburn.vim'
-" Surround
-Bundle 'tpope/vim-surround'
 
-" Bundles from vim-scripts repos
-
-" Autocompletition
-Bundle 'AutoComplPop'
-" Pending tasks list
-Bundle 'TaskList.vim'
-" Search results counter
-Bundle 'IndexedSearch'
-" XML/HTML tags navigation
-Bundle 'matchit.zip'
-" Gvim colorscheme
-Bundle 'Wombat'
-"Vimwiki
-Bundle 'vimwiki'
-"Solarized
-Bundle 'altercation/vim-colors-solarized'
-"Muon term
-Bundle 'gregsexton/Muon'
-"Superman Gvim
-Bundle 'tristen/superman'
-" Jellybeans
-Bundle 'nanotech/jellybeans.vim'
-" Css colors
-Bundle 'css_color.vim'
-" Railscasts theme
-Bundle 'Railscasts-Theme-GUIand256color'
-" Sexy railscasts
-Bundle 'sexy-railscasts'
-" Hybrid theme
-Bundle 'w0ng/vim-hybrid'
-Bundle 'jade.vim'
-" Installing plugins the first time
 if iCanHazVundle == 0
     echo "Installing Bundles, please ignore key map error messages"
     echo ""
@@ -92,15 +50,11 @@ filetype plugin on
 filetype indent on
 
 " tabs and spaces handling
-:set expandtab
-:set tabstop=2
-:set softtabstop=2
-:set shiftwidth=2
+set expandtab
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 
-" tablength exceptions
-autocmd FileType html setlocal shiftwidth=2 tabstop=2
-autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
-    
 " always show status bar
 set ls=2
 
@@ -116,178 +70,3 @@ set hlsearch
 
 " line numbers
 set number
-
-" toggle Tagbar display
-map <F4> :TagbarToggle<CR>
-" autofocus on Tagbar open
-let g:tagbar_autofocus = 1
-
-" NERDTree (better file browser) toggle
-map <F3> :NERDTreeToggle<CR>
-
-" tab navigation
-map tn :tabn<CR>
-map tp :tabp<CR>
-map tm :tabm<CR>
-map tt :tabnew 
-
-" automatically close autocompletition window
-autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
-autocmd InsertLeave * if pumvisible() == 0|pclose|endif
-
-" old autocomplete keyboard shortcut
-imap <C-J> <C-X><C-O>
-
-" show pending tasks list
-map <F2> :TaskList<CR>
-
-" removes trailing spaces of python files
-" (and restores cursor position)
-autocmd BufWritePre *.py mark z | %s/ *$//e | 'z
-
-" save as sudo
-ca w!! w !sudo tee "%"
-
-" colors and settings of autocompletition
-highlight Pmenu ctermbg=4 guibg=LightGray
-" highlight PmenuSel ctermbg=8 guibg=DarkBlue guifg=Red
-" highlight PmenuSbar ctermbg=7 guibg=DarkGray
-" highlight PmenuThumb guibg=Black
-" use global scope search
-let OmniCpp_GlobalScopeSearch = 1
-" 0 = namespaces disabled
-" 1 = search namespaces in the current buffer
-" 2 = search namespaces in the current buffer and in included files
-let OmniCpp_NamespaceSearch = 2
-" 0 = auto
-" 1 = always show all members
-let OmniCpp_DisplayMode = 1
-" 0 = don't show scope in abbreviation
-" 1 = show scope in abbreviation and remove the last column
-let OmniCpp_ShowScopeInAbbr = 0
-" This option allows to display the prototype of a function in the abbreviation part of the popup menu.
-" 0 = don't display prototype in abbreviation
-" 1 = display prototype in abbreviation
-let OmniCpp_ShowPrototypeInAbbr = 1
-" This option allows to show/hide the access information ('+', '#', '-') in the popup menu.
-" 0 = hide access
-" 1 = show access
-let OmniCpp_ShowAccess = 1
-" This option can be use if you don't want to parse using namespace declarations in included files and want to add 
-" namespaces that are always used in your project.
-let OmniCpp_DefaultNamespaces = ["std"]
-" Complete Behaviour
-let OmniCpp_MayCompleteDot = 0
-let OmniCpp_MayCompleteArrow = 0
-let OmniCpp_MayCompleteScope = 0
-" When 'completeopt' does not contain "longest", Vim automatically select the first entry of the popup menu. You can 
-" change this behaviour with the OmniCpp_SelectFirstItem option.
-let OmniCpp_SelectFirstItem = 0
-
-" debugger keyboard shortcuts
-"map <F5> :Dbg over<CR>
-"map <F6> :Dbg into<CR>
-"map <F7> :Dbg out<CR>
-"map <F8> :Dbg here<CR>
-"map <F9> :Dbg break<CR>
-"map <F10> :Dbg watch<CR>
-"map <F11> :Dbg down<CR>
-"map <F12> :Dbg up<CR>
-
-" CtrlP (new fuzzy finder)
-let g:ctrlp_map = ',e'
-nmap ,g :CtrlPBufTag<CR>
-nmap ,f :CtrlPLine<CR>
-nmap ,d :execute ":nmap ,tmpd :CtrlPBufTag\<CR\>" . expand('<cword>')<CR>,tmpd
-nmap ,E :execute ":nmap ,tmpd :CtrlP\<CR\>" . expand('<cfile>')<CR>,tmpd
-" Don't change working directory
-let g:ctrlp_working_path_mode = 0
-
-" simple recursive grep
-command! -nargs=1 RecurGrep lvimgrep /<args>/gj ./**/*.* | lopen | set nowrap
-command! -nargs=1 RecurGrepFast exec 'lgrep! <q-args> ./**/*.*' | lopen
-nmap ,R :RecurGrep 
-nmap ,r :RecurGrepFast 
-
-" run pep8+pyflakes validator
-autocmd FileType python map <buffer> ,8 :call Flake8()<CR>
-" rules to ignore (example: "E501,W293")
-let g:flake8_ignore=""
-
-" don't let pyflakes allways override the quickfix list
-let g:pyflakes_use_quickfix = 1
-
-" autoclose (
-inoremap        (  ()<Left>
-inoremap <expr> )  strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")"
-" autoclose [
-inoremap        [  []<Left>
-inoremap <expr> ]  strpart(getline('.'), col('.')-1, 1) == "]" ? "\<Right>" : "]"
-" autoclose {
-inoremap        {  {}<Left>
-inoremap <expr> }  strpart(getline('.'), col('.')-1, 1) == "}" ? "\<Right>" : "}"
-
-" Ultisnips Directory
-let g:UltiSnipsSnippetDirectories=["bundle/ultisnips/UltiSnips"]
-let g:UltiSnipsEditSplit="horizontal"
-
-" use 256 colors when possible
-if &term =~? 'mlterm\|xterm\|screen-256'
-	let &t_Co = 256
-    " color
-    colorscheme fisa
-endif
-
-if has('gui_running')
-    set guifont=Inconsolata\ Medium\ 12
-    colorscheme superman
-    set guioptions=aei
-else
-    colorscheme jellybeans
-    set guifont=Droid\ Sans\ Mono\ 10
-endif
-
-" when scrolling, keep cursor 3 lines away from screen border
-set scrolloff=5
-
-" autocompletition of files and commands behaves like shell
-" (complete only the common part, list the options that match)
-set wildmode=longest,list:longest
-
-let g:indexed_search_colors=1
-
-" to use fancy symbols for powerline, uncomment the following line and use a
-" patched font (more info on the README.rst)
-let g:Powerline_symbols = 'unicode'
-
-" Intuitive backspacing.
-set backspace=indent,eol,start 
-
-"nop to arrows
-"inoremap <Up> <NOP>
-"inoremap <Down> <NOP>
-"inoremap <Left> <NOP>
-"inoremap <Right> <NOP>
-"noremap <Up> <NOP>
-"noremap <Down> <NOP>
-"noremap <Left> <NOP>
-"noremap <Right> <NOP>
-
-"map Y to copy until end of line
-map Y y$
-let tlist_tex_settings   = 'latex;s:sections;g:graphics;l:labels'
-let tlist_make_settings  = 'make;m:makros;t:targets'
-let tlist_tex_settings='latex;b:bibitem;c:command;l:label'
-
-
-"MiniBufExpl
-hi MBEVisibleActive guifg=#A6DB29 guibg=fg
-hi MBEVisibleChangedActive guifg=#F1266F guibg=fg
-hi MBEVisibleChanged guifg=#F1266F guibg=fg
-hi MBEVisibleNormal guifg=#5DC2D6 guibg=fg
-hi MBEChanged guifg=#CD5907 guibg=fg
-hi MBENormal guifg=#808080 guibg=fg
-
-
-"highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-"match OverLength /\%81v.\+/
