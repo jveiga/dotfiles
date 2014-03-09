@@ -25,8 +25,10 @@ Bundle 'gmarik/vundle'
 " Bundles from GitHub repos:
 
 " Better file browser
-Bundle 'scrooloose/nerdtree'
+"Bundle 'scrooloose/nerdtree'
 " Code commenter
+Bundle 'tpope/vim-vinegar'
+" Vim vinegar
 Bundle 'scrooloose/nerdcommenter'
 " Class/module browser
 Bundle 'majutsushi/tagbar'
@@ -48,7 +50,8 @@ Bundle 'tpope/vim-surround.git'
 Bundle 'vexxor/zenburn.vim'
 " Surround
 Bundle 'tpope/vim-surround'
-
+" Rust highlight
+Bundle 'wting/rust.vim'
 " Bundles from vim-scripts repos
 
 " Autocompletition
@@ -82,6 +85,8 @@ Bundle 'sexy-railscasts'
 " Hybrid theme
 Bundle 'w0ng/vim-hybrid'
 Bundle 'jade.vim'
+" Puppeties
+Bundle 'rodjek/vim-puppet'
 " Installing plugins the first time
 if iCanHazVundle == 0
     echo "Installing Bundles, please ignore key map error messages"
@@ -290,6 +295,13 @@ hi MBEVisibleNormal guifg=#5DC2D6 guibg=fg
 hi MBEChanged guifg=#CD5907 guibg=fg
 hi MBENormal guifg=#808080 guibg=fg
 
-
 "highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 "match OverLength /\%81v.\+/
+
+" Barebones
+set path=**
+set suffixesadd=.rb,.yml,ru
+set nocompatible
+"set wildmode=full
+set wildmenu
+"set wildignore=*.class,*.pyc
