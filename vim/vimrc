@@ -66,8 +66,6 @@ Bundle 'matchit.zip'
 Bundle 'Wombat'
 "Vimwiki
 Bundle 'vimwiki'
-"Colorscheme
-Bundle 'jelera/vim-gummybears-colorscheme'
 "Solarized
 Bundle 'altercation/vim-colors-solarized'
 "Muon term
