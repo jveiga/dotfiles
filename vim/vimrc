@@ -1,53 +1,60 @@
-" Rambo options
+set nocompatible              " be iMproved
+filetype off                  " required!
+
+let mapleader = ','
+if has('vim_starting')
+set nocompatible               " Be iMproved
+
+" Required:
+set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+
+" Required:
+call neobundle#begin(expand('~/.vim/bundle/'))
+
+" Let NeoNeoBundleFetch manage NeoBundle
+" Required:
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+"NeoBundle 'gmarik/vundle'
+NeoBundle 'vim-ruby/vim-ruby'
+NeoBundle 'ag.vim'
+NeoBundle 'fugitive.vim'
+NeoBundle 'tpope/vim-endwise'
+NeoBundle 'surround.vim'
+NeoBundle 'tpope/vim-vinegar'
+NeoBundle 'itchyny/lightline.vim'
+
+" Colorschemes
+NeoBundle 'nanotech/jellybeans.vim'
+NeoBundle 'Solarized'
+NeoBundle 'molokai'
+NeoBundle 'morhetz/gruvbox'
+NeoBundle '29decibel/codeschool-vim-theme'
+NeoBundle 'tpope/vim-dispatch'
+NeoBundle 'elixir-lang/vim-elixir'
+NeoBundle 'tpope/vim-rails'
+NeoBundle 'scrooloose/nerdcommenter'
+"
+NeoBundle 'Tabular'
+NeoBundle 'matchit.zip'
+NeoBundle 'Puppet-Syntax-Highlighting'
+NeoBundle 'leshill/vim-json'
+NeoBundle 'editorconfig-vim'
+NeoBundle 'tpope/vim-dispatch'
+NeoBundle 'ecomba/vim-ruby-refactoring'
+" Vim Bare Bones
 set path=**
-set suffixesadd=.rb
-set wildmenu
-" set wildignore=
-
-" put this line first in ~/.vimrc
-set nocompatible | filetype indent plugin on | syn on
-
-" no vi-compatible
+set suffixesadd=.rb,.yml,.js
 set nocompatible
-
-" Setting up Vundle - the vim plugin bundler
-let iCanHazVundle=1
-let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
-if !filereadable(vundle_readme)
-    echo "Installing Vundle..."
-    echo ""
-    silent !mkdir -p ~/.vim/bundle
-    silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
-    let iCanHazVundle=0
-endif
-
-" required for vundle
-filetype off
-
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-" let Vundle manage Vundle
-" required!
-Bundle 'gmarik/vundle'
-Bundle 'Tabular'
-Bundle 'rking/ag.vim'
-
-" NERDTree
-Bundle 'NERDTree'
-" Fix weird chars
-let NERDTreeDirArrows=0
-
-
-if iCanHazVundle == 0
-    echo "Installing Bundles, please ignore key map error messages"
-    echo ""
-    :BundleInstall
-endif
+set wildmode=full
+set wildmenu
 
 " allow plugins by file type
+filetype on
 filetype plugin on
 filetype indent on
+" filetype plugin indent on     " required!
 
 " tabs and spaces handling
 set expandtab
@@ -63,10 +70,43 @@ set incsearch "Highlight as you type
 set hidden    "Handle multiple buffers better
 set ignorecase " Case-insensitive searching.
 set smartcase " But case-sensitive if expression contains a capital letter.
-set noswapfile
+set swapfile
+set directory=~/tmp,/var/tmp,/tmp
 
 " highlighted search results
 set hlsearch
 
 " line numbers
 set number
+
+syntax on
+
+set t_Co=256
+scriptencoding utf-8
+set encoding=utf-8
+
+
+autocmd FileType pp :set ft=ruby
+
+" After write, remove trailling whitespaces
+autocmd BufWritePre * :%s/\s\+$//e
+
+" Remove scrollbars
+set guioptions=aei
+
+set backspace=indent,eol,start
+
+" My NeoBundleFetchs here:
+" Refer to |:NeoNeoBundleFetch-examples|.
+" Note: You don't set neobundle setting in .gvimrc!
+
+call neobundle#end()
+
+" Required:
+filetype plugin indent on
+
+" If there are uninstalled bundles found on startup,
+" this will conveniently prompt you to install them.
+NeoBundleCheck
+
+colorscheme jellybeans
