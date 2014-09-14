@@ -5,11 +5,11 @@ set nocompatible
 let iCanHazVundle=1
 let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
 if !filereadable(vundle_readme)
-    echo "Installing Vundle..."
-    echo ""
-    silent !mkdir -p ~/.vim/bundle
-    silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
-    let iCanHazVundle=0
+  echo "Installing Vundle..."
+  echo ""
+  silent !mkdir -p ~/.vim/bundle
+  silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
+  let iCanHazVundle=0
 endif
 
 " required for vundle
@@ -24,8 +24,6 @@ Bundle 'gmarik/vundle'
 
 " Bundles from GitHub repos:
 
-" Better file browser
-"Bundle 'scrooloose/nerdtree'
 " Code commenter
 Bundle 'tpope/vim-vinegar'
 " Vim vinegar
@@ -33,7 +31,7 @@ Bundle 'scrooloose/nerdcommenter'
 " Class/module browser
 Bundle 'majutsushi/tagbar'
 " Code and files fuzzy finder
-Bundle 'kien/ctrlp.vim'
+"Bundle 'kien/ctrlp.vim'
 " Git integration
 Bundle 'tpope/vim-fugitive'
 " Powerline
@@ -41,23 +39,28 @@ Bundle 'Lokaltog/vim-powerline'
 " Terminal Vim with 256 colors colorscheme
 Bundle 'fisadev/fisa-vim-colorscheme'
 " OmniCache
-Bundle 'Shougo/neocomplcache'
+Bundle 'Shougo/neocomplete'
 " Zencoding abbreviations
 Bundle 'mattn/zencoding-vim'
-" Surround
-Bundle 'tpope/vim-surround.git'
 " Zenburn
 Bundle 'vexxor/zenburn.vim'
 " Surround
 Bundle 'tpope/vim-surround'
-" Rust highlight
+" Elixir
+Bundle 'elixir-lang/vim-elixir'
 Bundle 'wting/rust.vim'
 " Bundles from vim-scripts repos
+Bundle 'tpope/vim-dispatch'
+Bundle 'godlygeek/tabular'
+Bundle 'rails.vim'
+Bundle 'rking/ag.vim'
+Bundle 'go.vim'
+Bundle 'Shougo/vimproc.vim'
+
+Bundle 'unite.vim'
 
 " Autocompletition
 Bundle 'AutoComplPop'
-" Pending tasks list
-Bundle 'TaskList.vim'
 " Search results counter
 Bundle 'IndexedSearch'
 " XML/HTML tags navigation
@@ -82,14 +85,13 @@ Bundle 'Railscasts-Theme-GUIand256color'
 Bundle 'sexy-railscasts'
 " Hybrid theme
 Bundle 'w0ng/vim-hybrid'
-Bundle 'jade.vim'
 " Puppeties
 Bundle 'rodjek/vim-puppet'
 " Installing plugins the first time
 if iCanHazVundle == 0
-    echo "Installing Bundles, please ignore key map error messages"
-    echo ""
-    :BundleInstall
+  echo "Installing Bundles, please ignore key map error messages"
+  echo ""
+  :BundleInstall
 endif
 
 " allow plugins by file type
@@ -97,15 +99,15 @@ filetype plugin on
 filetype indent on
 
 " tabs and spaces handling
-:set expandtab
-:set tabstop=2
-:set softtabstop=2
-:set shiftwidth=2
+set expandtab
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 
 " tablength exceptions
 autocmd FileType html setlocal shiftwidth=2 tabstop=2
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
-    
+
 " always show status bar
 set ls=2
 
@@ -122,91 +124,11 @@ set hlsearch
 " line numbers
 set number
 
-" toggle Tagbar display
-map <F4> :TagbarToggle<CR>
-" autofocus on Tagbar open
-let g:tagbar_autofocus = 1
-
-" NERDTree (better file browser) toggle
-map <F3> :NERDTreeToggle<CR>
-
-" tab navigation
-map tn :tabn<CR>
-map tp :tabp<CR>
-map tm :tabm<CR>
-map tt :tabnew 
-
-" automatically close autocompletition window
-autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
-autocmd InsertLeave * if pumvisible() == 0|pclose|endif
-
-" old autocomplete keyboard shortcut
-imap <C-J> <C-X><C-O>
-
-" show pending tasks list
-map <F2> :TaskList<CR>
-
-" removes trailing spaces of python files
-" (and restores cursor position)
-autocmd BufWritePre *.py mark z | %s/ *$//e | 'z
-
 " save as sudo
 ca w!! w !sudo tee "%"
 
 " colors and settings of autocompletition
 highlight Pmenu ctermbg=4 guibg=LightGray
-" highlight PmenuSel ctermbg=8 guibg=DarkBlue guifg=Red
-" highlight PmenuSbar ctermbg=7 guibg=DarkGray
-" highlight PmenuThumb guibg=Black
-" use global scope search
-let OmniCpp_GlobalScopeSearch = 1
-" 0 = namespaces disabled
-" 1 = search namespaces in the current buffer
-" 2 = search namespaces in the current buffer and in included files
-let OmniCpp_NamespaceSearch = 2
-" 0 = auto
-" 1 = always show all members
-let OmniCpp_DisplayMode = 1
-" 0 = don't show scope in abbreviation
-" 1 = show scope in abbreviation and remove the last column
-let OmniCpp_ShowScopeInAbbr = 0
-" This option allows to display the prototype of a function in the abbreviation part of the popup menu.
-" 0 = don't display prototype in abbreviation
-" 1 = display prototype in abbreviation
-let OmniCpp_ShowPrototypeInAbbr = 1
-" This option allows to show/hide the access information ('+', '#', '-') in the popup menu.
-" 0 = hide access
-" 1 = show access
-let OmniCpp_ShowAccess = 1
-" This option can be use if you don't want to parse using namespace declarations in included files and want to add 
-" namespaces that are always used in your project.
-let OmniCpp_DefaultNamespaces = ["std"]
-" Complete Behaviour
-let OmniCpp_MayCompleteDot = 0
-let OmniCpp_MayCompleteArrow = 0
-let OmniCpp_MayCompleteScope = 0
-" When 'completeopt' does not contain "longest", Vim automatically select the first entry of the popup menu. You can 
-" change this behaviour with the OmniCpp_SelectFirstItem option.
-let OmniCpp_SelectFirstItem = 0
-
-" debugger keyboard shortcuts
-"map <F5> :Dbg over<CR>
-"map <F6> :Dbg into<CR>
-"map <F7> :Dbg out<CR>
-"map <F8> :Dbg here<CR>
-"map <F9> :Dbg break<CR>
-"map <F10> :Dbg watch<CR>
-"map <F11> :Dbg down<CR>
-"map <F12> :Dbg up<CR>
-
-" CtrlP (new fuzzy finder)
-let g:ctrlp_map = ',e'
-nmap ,g :CtrlPBufTag<CR>
-nmap ,f :CtrlPLine<CR>
-nmap ,d :execute ":nmap ,tmpd :CtrlPBufTag\<CR\>" . expand('<cword>')<CR>,tmpd
-nmap ,E :execute ":nmap ,tmpd :CtrlP\<CR\>" . expand('<cfile>')<CR>,tmpd
-" Don't change working directory
-let g:ctrlp_working_path_mode = 0
 
 " simple recursive grep
 command! -nargs=1 RecurGrep lvimgrep /<args>/gj ./**/*.* | lopen | set nowrap
@@ -214,42 +136,18 @@ command! -nargs=1 RecurGrepFast exec 'lgrep! <q-args> ./**/*.*' | lopen
 nmap ,R :RecurGrep 
 nmap ,r :RecurGrepFast 
 
-" run pep8+pyflakes validator
-autocmd FileType python map <buffer> ,8 :call Flake8()<CR>
-" rules to ignore (example: "E501,W293")
-let g:flake8_ignore=""
-
-" don't let pyflakes allways override the quickfix list
-let g:pyflakes_use_quickfix = 1
-
-" autoclose (
-inoremap        (  ()<Left>
-inoremap <expr> )  strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")"
-" autoclose [
-inoremap        [  []<Left>
-inoremap <expr> ]  strpart(getline('.'), col('.')-1, 1) == "]" ? "\<Right>" : "]"
-" autoclose {
-inoremap        {  {}<Left>
-inoremap <expr> }  strpart(getline('.'), col('.')-1, 1) == "}" ? "\<Right>" : "}"
-
-" Ultisnips Directory
-let g:UltiSnipsSnippetDirectories=["bundle/ultisnips/UltiSnips"]
-let g:UltiSnipsEditSplit="horizontal"
-
 " use 256 colors when possible
-if &term =~? 'mlterm\|xterm\|screen-256'
-	let &t_Co = 256
-    " color
-    colorscheme fisa
-endif
+"if &term =~? 'mlterm\|xterm\|screen-256'
+let &t_Co = 256
+"endif
 
 if has('gui_running')
-    set guifont=Inconsolata\ Medium\ 12
-    colorscheme superman
-    set guioptions=aei
+  set guifont=Inconsolata\ Medium\ 12
+  colorscheme superman
+  set guioptions=aei
 else
-    colorscheme jellybeans
-    set guifont=Droid\ Sans\ Mono\ 10
+  colorscheme jellybeans
+  set guifont=Droid\ Sans\ Mono\ 10
 endif
 
 " when scrolling, keep cursor 3 lines away from screen border
@@ -268,22 +166,8 @@ let g:Powerline_symbols = 'unicode'
 " Intuitive backspacing.
 set backspace=indent,eol,start 
 
-"nop to arrows
-"inoremap <Up> <NOP>
-"inoremap <Down> <NOP>
-"inoremap <Left> <NOP>
-"inoremap <Right> <NOP>
-"noremap <Up> <NOP>
-"noremap <Down> <NOP>
-"noremap <Left> <NOP>
-"noremap <Right> <NOP>
-
 "map Y to copy until end of line
 map Y y$
-let tlist_tex_settings   = 'latex;s:sections;g:graphics;l:labels'
-let tlist_make_settings  = 'make;m:makros;t:targets'
-let tlist_tex_settings='latex;b:bibitem;c:command;l:label'
-
 
 "MiniBufExpl
 hi MBEVisibleActive guifg=#A6DB29 guibg=fg
@@ -293,13 +177,26 @@ hi MBEVisibleNormal guifg=#5DC2D6 guibg=fg
 hi MBEChanged guifg=#CD5907 guibg=fg
 hi MBENormal guifg=#808080 guibg=fg
 
-"highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-"match OverLength /\%81v.\+/
-
 " Barebones
 set path=**
 set suffixesadd=.rb,.yml,ru
 set nocompatible
-"set wildmode=full
 set wildmenu
-"set wildignore=*.class,*.pyc
+
+autocmd BufRead,BufNewFile *.go set filetype=go
+autocmd BufRead,BufNewFile *.exs,*ex set filetype=elixir
+autocmd BufRead,BufNewFile *.rs set filetype=rust
+
+" Neocomplete
+let g:neocomplete#enable_at_startup = 1
+
+" Unite.vim
+nmap ,f :Unite file file_rec <CR>
+let g:unite_enable_start_insert = 1
+let g:unite_split_rule = "botright"
+let g:unite_force_overwrite_statusline = 0
+let g:unite_winheight = 10
+
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
+call unite#filters#sorter_default#use(['sorter_rank'])
+
