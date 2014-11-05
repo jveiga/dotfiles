@@ -16,7 +16,6 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 " Required:
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-"NeoBundle 'gmarik/vundle'
 NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'ag.vim'
 NeoBundle 'fugitive.vim'
@@ -24,6 +23,17 @@ NeoBundle 'tpope/vim-endwise'
 NeoBundle 'surround.vim'
 NeoBundle 'tpope/vim-vinegar'
 NeoBundle 'itchyny/lightline.vim'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/vimproc', {
+      \     'build' : {
+      \     'mac' : 'make -f make_mac.mak',
+      \     'unix' : 'make -f make_unix.mak',
+      \},
+      \}
+NeoBundle 'junegunn/goyo.vim'
+NeoBundle 'wting/rust.vim'
+NeoBundle 'whatyouhide/vim-gotham'
+NeoBundle 'vim-scripts/taglist.vim'
 
 " Colorschemes
 NeoBundle 'nanotech/jellybeans.vim'
@@ -35,14 +45,12 @@ NeoBundle 'tpope/vim-dispatch'
 NeoBundle 'elixir-lang/vim-elixir'
 NeoBundle 'tpope/vim-rails'
 NeoBundle 'scrooloose/nerdcommenter'
+NeoBundle 'itchyny/landscape.vim'
 "
 NeoBundle 'Tabular'
 NeoBundle 'matchit.zip'
-NeoBundle 'Puppet-Syntax-Highlighting'
 NeoBundle 'leshill/vim-json'
 NeoBundle 'editorconfig-vim'
-NeoBundle 'tpope/vim-dispatch'
-NeoBundle 'ecomba/vim-ruby-refactoring'
 " Vim Bare Bones
 set path=**
 set suffixesadd=.rb,.yml,.js
@@ -109,4 +117,40 @@ filetype plugin indent on
 " this will conveniently prompt you to install them.
 NeoBundleCheck
 
-colorscheme jellybeans
+colorscheme landscape
+let g:lightline = {
+      \ 'colorscheme': 'landscape',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_visible_condition': {
+      \   'readonly': '(&filetype!="help"&& &readonly)',
+      \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))'
+      \ },
+      \ }
+
+"""" lightline.vim""""""""
+set guifont=Inconsolata\ for\ Powerline:h15
+let g:Powerline_symbols = 'fancy'
+set encoding=utf-8
+set t_Co=256
+set fillchars+=stl:\ ,stlnc:\
+set term=xterm-256color
+set termencoding=utf-8
+
+au BufRead,BufNewFile *.go set filetype=go
+au BufRead,BufNewFile *.exs,*.ex set filetype=elixir
+au BufRead,BufNewFile *.rs set filetype=rust
+
+nmap ,f :Unite -no-split file file_rec -start-insert <CR>
+nmap ,b :Unite -no-split buffer -start-insert <CR>
+
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
+call unite#filters#sorter_default#use(['sorter_rank'])
+
+" TagList
+let Tlist_Use_Right_Window=1
+let Tlist_Enable_Fold_Column=0
+let Tlist_Show_One_File=1 " especially with this one
+let Tlist_Compact_Format=1
