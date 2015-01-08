@@ -34,6 +34,7 @@ NeoBundle 'junegunn/goyo.vim'
 NeoBundle 'wting/rust.vim'
 NeoBundle 'whatyouhide/vim-gotham'
 NeoBundle 'vim-scripts/taglist.vim'
+NeoBundle 'jimenezrick/vimerl.git'
 
 " Colorschemes
 NeoBundle 'nanotech/jellybeans.vim'
@@ -51,6 +52,7 @@ NeoBundle 'Tabular'
 NeoBundle 'matchit.zip'
 NeoBundle 'leshill/vim-json'
 NeoBundle 'editorconfig-vim'
+NeoBundle 'roman/golden-ratio'
 " Vim Bare Bones
 set path=**
 set suffixesadd=.rb,.yml,.js
@@ -143,6 +145,7 @@ au BufRead,BufNewFile *.go set filetype=go
 au BufRead,BufNewFile *.exs,*.ex set filetype=elixir
 au BufRead,BufNewFile *.rs set filetype=rust
 
+let g:unite_source_grep_command = 'ag'
 nmap ,f :Unite -no-split file file_rec -start-insert <CR>
 nmap ,b :Unite -no-split buffer -start-insert <CR>
 
