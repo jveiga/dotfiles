@@ -16,6 +16,7 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 " Required:
 NeoBundleFetch 'Shougo/neobundle.vim'
 
+NeoBundle 'thinca/vim-ref'
 NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'ag.vim'
 NeoBundle 'fugitive.vim'
@@ -24,6 +25,7 @@ NeoBundle 'surround.vim'
 NeoBundle 'tpope/vim-vinegar'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'Shougo/unite.vim'
+NeoBundle 'rking/ag.vim'
 NeoBundle 'Shougo/vimproc', {
       \     'build' : {
       \     'mac' : 'make -f make_mac.mak',
@@ -32,7 +34,9 @@ NeoBundle 'Shougo/vimproc', {
       \}
 NeoBundle 'junegunn/goyo.vim'
 NeoBundle 'wting/rust.vim'
+NeoBundle 'vim-scripts/taglist.vim'
 NeoBundle 'whatyouhide/vim-gotham'
+NeoBundle 'fatih/vim-go'
 NeoBundle 'vim-scripts/taglist.vim'
 NeoBundle 'jimenezrick/vimerl.git'
 
