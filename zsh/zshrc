@@ -56,3 +56,10 @@ export TERM=rxvt-unicode
 export PATH=$PATH:/usr/local/go/bin
 
 PLUGINS( github )
+
+# From https://pastebin.com/raw/Kzeb31U0 
+# requires jq
+enum_crtsh(){ curl -s "https://crt.sh/?q=%25.$1"  | sed 's/<\/\?[^>]\+>//g' | sort -u | grep -v "LIKE" | grep -v "crt.sh" | grep $1 | sed 's/    //' | grep -v "*" | grep $1 }
+enum_certspotter(){ curl -s "https://certspotter.com/api/v0/certs?domain=$1"  | jq '.[].dns_names[]' | sed 's/\"//g' | sed 's/\*\.//g' | uniq | grep $1 }
+enum_hackertarget(){ curl -s "https://api.hackertarget.com/hostsearch/?q=$1" | cut -d',' -f1 | sort -u  }
+enum_commoncrawl(){ curl -sX GET "http://index.commoncrawl.org/CC-MAIN-2018-22-index?url=*.$1&output=json" | jq -r .url | sort -u }
