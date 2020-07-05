@@ -1,7 +1,0 @@
-My Vimwiki
-    My project
-        1 - [[Web Scraping]]
-        2 - [[Data storing]]
-        3 - Web representation
-        4 - Machine Learning
-        5 - Hosting
