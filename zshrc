@@ -31,7 +31,6 @@ export AWS_REGION=eu-west-1
 export AWS_PROFILE=fishbrain
 export PATH=$PATH:/Users/jveiga/.bin/:/Users/jveiga/Library/Python/3.7/bin/:/Users/jveiga/Library/Python/2.7/bin:~/go/bin/:/Users/jveiga/.local/bin/:/Users/jveiga/Library/Android/sdk/tools/bin/:~/.nimble/bin/:$(go env GOPATH)/bin
 alias vim=nvim
-alias git=hub
 alias grep=rg
 alias ls=exa
 alias gaws='docker run -it --rm  -v ~/.aws:/root/.aws cevoaustralia/aws-google-auth --profile fishbrain'
@@ -55,7 +54,7 @@ source ~/.skim/key-bindings.zsh
 . ~/.asdf/plugins/java/set-java-home.zsh
 
 export GO111MODULE=on
-
+export GOROOT=$(go env GOROOT)
 
 _z_cd() {
     cd "$@" || return "$?"
