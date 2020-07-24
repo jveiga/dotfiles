@@ -166,26 +166,6 @@ let g:skim_layout = { 'down': '~40%' }
 command! -bang -nargs=? -complete=dir Files
   \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
 
-" let g:ycm_language_server =
-"   \ [
-"   \   {
-"   \     'name': 'ruby',
-"   \     'cmdline': [ expand( '$HOME/.lsp/ruby/bin/solargraph' ), 'stdio' ],
-"   \     'filetypes': [ 'ruby' ],
-"   \   },
-"   \   {
-"   \     'name': 'rust',
-"   \     'cmdline': [ 'ra_lsp_server' ],
-"   \     'filetypes': [ 'rust' ],
-"   \     'project_root_files': [ 'Cargo.toml' ]
-"   \   }
-"   \ ]
-  " \   {
-  " \     'name': 'go',
-  " \     'cmdline': [ 'go-langserver' ],
-  " \     'filetypes': [ 'go' ],
-  " \   },
-
 set splitright
 set splitbelow
 
