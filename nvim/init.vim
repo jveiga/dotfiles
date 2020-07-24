@@ -21,7 +21,6 @@ Plug 'AndrewRadev/linediff.vim'
 
 Plug 'Chiel92/vim-autoformat'
 Plug 'srcery-colors/srcery-vim'
-Plug 'w0rp/ale'
 " Plug 'airblade/vim-rooter'
 Plug 'kylef/apiblueprint.vim'
 Plug 'tpope/vim-fugitive'
@@ -145,18 +144,10 @@ if &term =~ '256color'
 endif
 
 
-let b:ale_linters = {
-      \ 'python': ['pep8', 'pylint'],
-      \ 'ruby':   ['brakeman', 'rubocop'],
-      \ 'rust':   ['cargo', 'rustfmt'],
-      \ 'elixir': ['mix', 'elixir-ls']
-      \}
-
-" \ 'ruby':   ['brakeman', 'rails_best_practices', 'reek', 'rubocop', 'rufo', 'solargraph', 'standard'],
-" augroup PrevimSettings
-"     autocmd!
-"     autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
-" augroup END
+augroup PrevimSettings
+    autocmd!
+    autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
+augroup END
 
 set mouse=
 set modelines=0
