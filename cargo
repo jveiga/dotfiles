@@ -1,0 +1,28 @@
+b3sum v1.3.1
+bacon v2.0.1
+bat v0.20.0
+cargo-edit v0.8.0
+cargo-fuzz v0.11.0
+cargo-sweep v0.6.2
+cargo-update v8.1.2
+cargo-watch v8.1.1
+du-dust v0.8.0
+fd-find v8.3.1
+gfold v3.0.0
+git-delta v0.12.1
+gitui v0.20.1
+hx v0.4.2 (https://github.com/sitkevij/hex#21b2304a)
+hyperfine v1.13.0
+just v1.0.1
+lapce v0.0.9 (/private/tmp/lapce)
+procs v0.12.1
+qsv v0.34.1
+ripgrep v13.0.0
+runiq v1.2.1
+skim v0.9.4
+starship v1.3.0
+tokei v12.1.2
+topgrade v8.2.0
+tree-rs v0.6.5
+watchexec-cli v1.18.7
+zoxide v0.8.0
